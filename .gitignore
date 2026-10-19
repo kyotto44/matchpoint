@@ -1,0 +1,18 @@
+# Archivos que no se suben a GitHub
+
+# Claves y configuración local
+.env
+.env.*
+
+# Netlify CLI (guarda el id del sitio en tu equipo)
+.netlify/
+
+# Dependencias
+node_modules/
+
+# Editor y sistema operativo
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

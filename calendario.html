@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPoint | Calendario</title>
+  <meta name="description" content="Partidos del domingo 20 de septiembre con hora de Colombia y estadio: Atlético de Madrid vs Real Madrid, Juventus vs Atalanta, Bayer Leverkusen vs RB Leipzig y más." />
+  <meta name="theme-color" content="#09090b" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MatchPoint" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:title" content="MatchPoint | Calendario" />
+  <meta property="og:description" content="Partidos del domingo 20 de septiembre con hora de Colombia y estadio: Atlético de Madrid vs Real Madrid, Juventus vs Atalanta, Bayer Leverkusen vs RB Leipzig y más." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script defer src="js/main.js"></script>
+  <script defer src="js/filtros.js"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans">
+
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-amber-400 focus:px-4 focus:py-3 focus:font-display focus:font-bold focus:text-zinc-950">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-50">
+    <div class="h-[3px] bg-amber-400"></div>
+    <nav class="relative z-20 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800" aria-label="Principal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-sm corte-diagonal" aria-hidden="true">MP</div>
+            <span class="font-display font-bold text-xl tracking-tight">MATCHPOINT</span>
+          </a>
+          <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+            <a href="index.html" class="text-zinc-400 hover:text-white transition">Inicio</a>
+            <a href="resultados.html" class="text-zinc-400 hover:text-white transition">Resultados</a>
+            <a href="calendario.html" class="text-white font-semibold" aria-current="page">Calendario</a>
+            <a href="equipos.html" class="text-zinc-400 hover:text-white transition">Equipos</a>
+            <a href="posiciones.html" class="text-zinc-400 hover:text-white transition">Posiciones</a>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="hidden sm:flex items-center font-mono text-xs text-zinc-400 border border-zinc-800 rounded-md px-3 py-1.5">18-20 SEP</div>
+            <button type="button" class="md:hidden -mr-0.5 p-2.5 rounded-md text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil" data-menu-boton>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-menu h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path class="linea-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+                <path class="linea-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+                <path class="linea-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="menu-movil" class="menu-panel md:hidden absolute inset-x-0 top-full z-10 border-b border-zinc-800 bg-zinc-950 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.6)]" hidden>
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-5" aria-label="Menú móvil">
+        <ul class="divide-y divide-zinc-800/80">
+            <li><a href="index.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Inicio</a></li>
+            <li><a href="resultados.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Resultados</a></li>
+            <li><a href="calendario.html" aria-current="page" class="flex min-h-[52px] items-center justify-between font-display text-lg font-semibold text-white">Calendario<span class="h-3.5 w-2.5 bg-amber-400 corte-diagonal" aria-hidden="true"></span></a></li>
+            <li><a href="equipos.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Equipos</a></li>
+            <li><a href="posiciones.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Posiciones</a></li>
+        </ul>
+        <p class="mt-4 inline-flex items-center font-mono text-xs text-zinc-400 border border-zinc-800 rounded-md px-3 py-1.5">Jornada 18-20 SEP</p>
+      </nav>
+    </div>
+    <div class="menu-fondo md:hidden fixed inset-0 z-0 bg-zinc-950/70" hidden data-menu-fondo></div>
+    <div class="ticker relative z-20 bg-zinc-900 border-b border-zinc-800" role="region" aria-label="Últimos resultados" data-ticker>
+      <div class="overflow-hidden">
+      <div class="ticker-track flex items-center gap-10 py-2 font-mono text-xs whitespace-nowrap">
+        <span class="flex items-center gap-10">
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="bayern">Bayern</span> <span class="text-white font-semibold">7-0</span> <span data-team="union-berlin">Union Berlín</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="sevilla">Sevilla</span> <span class="text-white font-semibold">1-3</span> <span data-team="barcelona">Barcelona</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="gladbach">Gladbach</span> <span class="text-white font-semibold">3-4</span> <span data-team="mainz">Mainz</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="roma">Roma</span> <span class="text-white font-semibold">2-2</span> <span data-team="inter">Inter</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="brighton">Brighton</span> <span class="text-white font-semibold">3-0</span> <span data-team="arsenal">Arsenal</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="celta">Celta</span> <span class="text-white font-semibold">5-0</span> <span data-team="racing">Racing</span></span>
+        </span>
+        <span class="flex items-center gap-10" aria-hidden="true">
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="bayern">Bayern</span> <span class="text-white font-semibold">7-0</span> <span data-team="union-berlin">Union Berlín</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="sevilla">Sevilla</span> <span class="text-white font-semibold">1-3</span> <span data-team="barcelona">Barcelona</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="gladbach">Gladbach</span> <span class="text-white font-semibold">3-4</span> <span data-team="mainz">Mainz</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="roma">Roma</span> <span class="text-white font-semibold">2-2</span> <span data-team="inter">Inter</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="brighton">Brighton</span> <span class="text-white font-semibold">3-0</span> <span data-team="arsenal">Arsenal</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="celta">Celta</span> <span class="text-white font-semibold">5-0</span> <span data-team="racing">Racing</span></span>
+        </span>
+      </div>
+      </div>
+      <button type="button" class="ticker-boton absolute inset-y-0 right-0 flex w-14 items-center justify-end pr-3 bg-gradient-to-l from-zinc-900 from-40% to-transparent text-zinc-400 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-amber-400 before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']" aria-pressed="false" data-ticker-boton hidden>
+        <span class="sr-only">Pausar el carrusel de resultados</span>
+        <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-icono-pausa><rect x="3" y="2.5" width="3.5" height="11" rx="0.75" /><rect x="9.5" y="2.5" width="3.5" height="11" rx="0.75" /></svg>
+        <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-icono-play hidden><path d="M4.5 2.75v10.5a.75.75 0 0 0 1.14.64l8.4-5.25a.75.75 0 0 0 0-1.28l-8.4-5.25a.75.75 0 0 0-1.14.64z" /></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h1 class="font-display font-bold text-3xl md:text-4xl tracking-tight">Los partidos de hoy</h1>
+        <p class="mt-2 text-zinc-400">Domingo 20 de septiembre, horarios en Colombia (UTC-5).</p>
+      </div>
+
+      <div class="mb-10" data-filtros hidden>
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar partidos">
+            <button type="button" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-pressed:border-amber-400 aria-pressed:bg-amber-400 aria-pressed:text-zinc-950 aria-pressed:hover:border-amber-300 aria-pressed:hover:bg-amber-300 aria-pressed:hover:text-zinc-950" aria-pressed="true" data-filtro-liga="todas">Todas</button>
+            <button type="button" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-pressed:border-amber-400 aria-pressed:bg-amber-400 aria-pressed:text-zinc-950 aria-pressed:hover:border-amber-300 aria-pressed:hover:bg-amber-300 aria-pressed:hover:text-zinc-950" aria-pressed="false" data-filtro-liga="premier-league">Premier League</button>
+            <button type="button" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-pressed:border-amber-400 aria-pressed:bg-amber-400 aria-pressed:text-zinc-950 aria-pressed:hover:border-amber-300 aria-pressed:hover:bg-amber-300 aria-pressed:hover:text-zinc-950" aria-pressed="false" data-filtro-liga="laliga">LaLiga</button>
+            <button type="button" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-pressed:border-amber-400 aria-pressed:bg-amber-400 aria-pressed:text-zinc-950 aria-pressed:hover:border-amber-300 aria-pressed:hover:bg-amber-300 aria-pressed:hover:text-zinc-950" aria-pressed="false" data-filtro-liga="serie-a">Serie A</button>
+            <button type="button" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-pressed:border-amber-400 aria-pressed:bg-amber-400 aria-pressed:text-zinc-950 aria-pressed:hover:border-amber-300 aria-pressed:hover:bg-amber-300 aria-pressed:hover:text-zinc-950" aria-pressed="false" data-filtro-liga="bundesliga">Bundesliga</button>
+            <button type="button" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-pressed:border-amber-400 aria-pressed:bg-amber-400 aria-pressed:text-zinc-950 aria-pressed:hover:border-amber-300 aria-pressed:hover:bg-amber-300 aria-pressed:hover:text-zinc-950" aria-pressed="false" data-filtro-favorito hidden><svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.75l2.83 5.73 6.32.92-4.57 4.46 1.08 6.29L12 17.18l-5.66 2.97 1.08-6.29L2.85 9.4l6.32-.92z"/></svg><span class="sr-only">Solo partidos de </span><span data-filtro-favorito-nombre></span></button>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-zinc-400" role="status" data-filtro-estado data-sufijo="partidos de hoy"></p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <a href="posiciones.html#laliga" class="group relative md:col-span-2 rounded-xl overflow-hidden border border-zinc-800 aspect-[4/3] md:aspect-[21/9] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" data-partido data-liga="laliga" data-fav-contenedor>
+          <img src="imagenes/derbi-madrid.webp" srcset="imagenes/derbi-madrid-800.webp 800w, imagenes/derbi-madrid.webp 1600w" sizes="(min-width: 1280px) 1216px, (min-width: 768px) 100vw, 160vw" alt="" width="1600" height="700" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-6 sm:p-8">
+            <span class="font-mono text-xs uppercase tracking-wider text-amber-400 mb-2">LaLiga · Hoy · 9:15 a.m.</span>
+            <h2 class="font-display font-bold text-2xl sm:text-3xl"><span data-team="atletico-madrid">Atlético de Madrid</span> vs <span data-team="real-madrid">Real Madrid</span></h2>
+            <p class="mt-1 text-sm text-zinc-300">Riyadh Air Metropolitano · separados por 2 puntos en la tabla</p>
+            <span class="mt-3 self-start inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-zinc-300 transition-colors group-hover:text-amber-400">Ver tabla de LaLiga <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+
+        <a href="posiciones.html#serie-a" class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/3] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" data-partido data-liga="serie-a" data-fav-contenedor>
+          <img src="imagenes/juve-atalanta.webp" alt="" width="800" height="600" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <span class="font-mono text-xs uppercase tracking-wider text-amber-400 mb-1">Serie A · Hoy · 11:00 a.m.</span>
+            <h2 class="font-display font-semibold text-lg"><span data-team="juventus">Juventus</span> vs <span data-team="atalanta">Atalanta</span></h2>
+            <p class="mt-1 text-xs text-zinc-400">Allianz Stadium</p>
+            <span class="mt-3 self-start inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-zinc-300 transition-colors group-hover:text-amber-400">Ver tabla de la Serie A <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+
+        <a href="posiciones.html#bundesliga" class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/3] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" data-partido data-liga="bundesliga" data-fav-contenedor>
+          <img src="imagenes/leverkusen-leipzig.webp" alt="" width="800" height="600" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <span class="font-mono text-xs uppercase tracking-wider text-amber-400 mb-1">Bundesliga · Hoy · 8:30 a.m.</span>
+            <h2 class="font-display font-semibold text-lg"><span data-team="leverkusen">Bayer Leverkusen</span> vs <span data-team="leipzig">RB Leipzig</span></h2>
+            <p class="mt-1 text-xs text-zinc-400">BayArena</p>
+            <span class="mt-3 self-start inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-zinc-300 transition-colors group-hover:text-amber-400">Ver tabla de la Bundesliga <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+
+        <a href="posiciones.html#premier-league" class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/3] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" data-partido data-liga="premier-league" data-fav-contenedor>
+          <img src="imagenes/bournemouth-liverpool.webp" alt="" width="800" height="600" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <span class="font-mono text-xs uppercase tracking-wider text-amber-400 mb-1">Premier League · Hoy · 8:00 a.m.</span>
+            <h2 class="font-display font-semibold text-lg"><span data-team="bournemouth">Bournemouth</span> vs <span data-team="liverpool">Liverpool</span></h2>
+            <p class="mt-1 text-xs text-zinc-400">Vitality Stadium</p>
+            <span class="mt-3 self-start inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-zinc-300 transition-colors group-hover:text-amber-400">Ver tabla de la Premier League <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+
+        <a href="posiciones.html#laliga" class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/3] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" data-partido data-liga="laliga" data-fav-contenedor>
+          <img src="imagenes/valencia-realsociedad.webp" alt="" width="800" height="600" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <span class="font-mono text-xs uppercase tracking-wider text-amber-400 mb-1">LaLiga · Hoy · 2:00 p.m.</span>
+            <h2 class="font-display font-semibold text-lg"><span data-team="valencia">Valencia</span> vs <span data-team="real-sociedad">Real Sociedad</span></h2>
+            <p class="mt-1 text-xs text-zinc-400">Mestalla</p>
+            <span class="mt-3 self-start inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-zinc-300 transition-colors group-hover:text-amber-400">Ver tabla de LaLiga <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="rounded-xl border border-dashed border-zinc-800 px-6 py-14 text-center" data-filtro-vacio hidden>
+        <span class="mx-auto mb-5 flex h-10 w-10 items-center justify-center bg-zinc-800 font-mono text-sm font-bold text-zinc-400 corte-diagonal" aria-hidden="true">0</span>
+        <h2 class="font-display font-semibold text-xl">Ningún partido coincide</h2>
+        <p class="mt-2 mx-auto max-w-md text-sm text-zinc-400" data-filtro-vacio-texto></p>
+        <button type="button" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 mt-6" data-filtro-limpiar>Quitar filtros</button>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="border-t border-zinc-800 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+        <div>
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-sm corte-diagonal" aria-hidden="true">MP</div>
+            <span class="font-display font-bold text-xl tracking-tight">MATCHPOINT</span>
+          </a>
+          <p class="mt-4 text-sm text-zinc-450 max-w-xs">Resultados, calendario y posiciones de Premier League, LaLiga, Serie A y Bundesliga.</p>
+        </div>
+        <nav aria-labelledby="pie-navegacion">
+          <h3 id="pie-navegacion" class="font-display font-semibold text-sm uppercase tracking-wide text-zinc-400 mb-4">Navegación</h3>
+          <ul class="sm:space-y-2 text-sm">
+            <li><a href="index.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Inicio</a></li>
+            <li><a href="resultados.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Resultados</a></li>
+            <li><a href="calendario.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Calendario</a></li>
+            <li><a href="equipos.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Equipos</a></li>
+            <li><a href="posiciones.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Posiciones</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3 class="font-display font-semibold text-sm uppercase tracking-wide text-zinc-400 mb-4">Ligas</h3>
+          <ul class="sm:space-y-2 text-sm">
+            <li><a href="posiciones.html#premier-league" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Premier League</a></li>
+            <li><a href="posiciones.html#laliga" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">LaLiga</a></li>
+            <li><a href="posiciones.html#serie-a" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Serie A</a></li>
+            <li><a href="posiciones.html#bundesliga" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Bundesliga</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-450">
+        <span>Proyecto académico realizado con Tailwind CSS.</span>
+        <span>Datos de la jornada del 18 al 20 de septiembre.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPoint | Equipos</title>
+  <meta name="description" content="Los seis equipos que dejaron huella en la última jornada: Bayern Múnich, Real Madrid, Barcelona, Brighton, Inter y Borussia Dortmund. Marca tu equipo favorito." />
+  <meta name="theme-color" content="#09090b" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MatchPoint" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:title" content="MatchPoint | Equipos" />
+  <meta property="og:description" content="Los seis equipos que dejaron huella en la última jornada: Bayern Múnich, Real Madrid, Barcelona, Brighton, Inter y Borussia Dortmund. Marca tu equipo favorito." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans">
+
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-amber-400 focus:px-4 focus:py-3 focus:font-display focus:font-bold focus:text-zinc-950">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-50">
+    <div class="h-[3px] bg-amber-400"></div>
+    <nav class="relative z-20 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800" aria-label="Principal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-sm corte-diagonal" aria-hidden="true">MP</div>
+            <span class="font-display font-bold text-xl tracking-tight">MATCHPOINT</span>
+          </a>
+          <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+            <a href="index.html" class="text-zinc-400 hover:text-white transition">Inicio</a>
+            <a href="resultados.html" class="text-zinc-400 hover:text-white transition">Resultados</a>
+            <a href="calendario.html" class="text-zinc-400 hover:text-white transition">Calendario</a>
+            <a href="equipos.html" class="text-white font-semibold" aria-current="page">Equipos</a>
+            <a href="posiciones.html" class="text-zinc-400 hover:text-white transition">Posiciones</a>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="hidden sm:flex items-center font-mono text-xs text-zinc-400 border border-zinc-800 rounded-md px-3 py-1.5">18-20 SEP</div>
+            <button type="button" class="md:hidden -mr-0.5 p-2.5 rounded-md text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil" data-menu-boton>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-menu h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path class="linea-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+                <path class="linea-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+                <path class="linea-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="menu-movil" class="menu-panel md:hidden absolute inset-x-0 top-full z-10 border-b border-zinc-800 bg-zinc-950 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.6)]" hidden>
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-5" aria-label="Menú móvil">
+        <ul class="divide-y divide-zinc-800/80">
+            <li><a href="index.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Inicio</a></li>
+            <li><a href="resultados.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Resultados</a></li>
+            <li><a href="calendario.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Calendario</a></li>
+            <li><a href="equipos.html" aria-current="page" class="flex min-h-[52px] items-center justify-between font-display text-lg font-semibold text-white">Equipos<span class="h-3.5 w-2.5 bg-amber-400 corte-diagonal" aria-hidden="true"></span></a></li>
+            <li><a href="posiciones.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Posiciones</a></li>
+        </ul>
+        <p class="mt-4 inline-flex items-center font-mono text-xs text-zinc-400 border border-zinc-800 rounded-md px-3 py-1.5">Jornada 18-20 SEP</p>
+      </nav>
+    </div>
+    <div class="menu-fondo md:hidden fixed inset-0 z-0 bg-zinc-950/70" hidden data-menu-fondo></div>
+    <div class="ticker relative z-20 bg-zinc-900 border-b border-zinc-800" role="region" aria-label="Últimos resultados" data-ticker>
+      <div class="overflow-hidden">
+      <div class="ticker-track flex items-center gap-10 py-2 font-mono text-xs whitespace-nowrap">
+        <span class="flex items-center gap-10">
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="bayern">Bayern</span> <span class="text-white font-semibold">7-0</span> <span data-team="union-berlin">Union Berlín</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="sevilla">Sevilla</span> <span class="text-white font-semibold">1-3</span> <span data-team="barcelona">Barcelona</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="gladbach">Gladbach</span> <span class="text-white font-semibold">3-4</span> <span data-team="mainz">Mainz</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="roma">Roma</span> <span class="text-white font-semibold">2-2</span> <span data-team="inter">Inter</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="brighton">Brighton</span> <span class="text-white font-semibold">3-0</span> <span data-team="arsenal">Arsenal</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="celta">Celta</span> <span class="text-white font-semibold">5-0</span> <span data-team="racing">Racing</span></span>
+        </span>
+        <span class="flex items-center gap-10" aria-hidden="true">
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="bayern">Bayern</span> <span class="text-white font-semibold">7-0</span> <span data-team="union-berlin">Union Berlín</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="sevilla">Sevilla</span> <span class="text-white font-semibold">1-3</span> <span data-team="barcelona">Barcelona</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="gladbach">Gladbach</span> <span class="text-white font-semibold">3-4</span> <span data-team="mainz">Mainz</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="roma">Roma</span> <span class="text-white font-semibold">2-2</span> <span data-team="inter">Inter</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="brighton">Brighton</span> <span class="text-white font-semibold">3-0</span> <span data-team="arsenal">Arsenal</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="celta">Celta</span> <span class="text-white font-semibold">5-0</span> <span data-team="racing">Racing</span></span>
+        </span>
+      </div>
+      </div>
+      <button type="button" class="ticker-boton absolute inset-y-0 right-0 flex w-14 items-center justify-end pr-3 bg-gradient-to-l from-zinc-900 from-40% to-transparent text-zinc-400 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-amber-400 before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']" aria-pressed="false" data-ticker-boton hidden>
+        <span class="sr-only">Pausar el carrusel de resultados</span>
+        <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-icono-pausa><rect x="3" y="2.5" width="3.5" height="11" rx="0.75" /><rect x="9.5" y="2.5" width="3.5" height="11" rx="0.75" /></svg>
+        <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-icono-play hidden><path d="M4.5 2.75v10.5a.75.75 0 0 0 1.14.64l8.4-5.25a.75.75 0 0 0 0-1.28l-8.4-5.25a.75.75 0 0 0-1.14.64z" /></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h1 class="font-display font-bold text-3xl md:text-4xl tracking-tight">Equipos de la semana</h1>
+        <p class="mt-2 text-zinc-400">Los que dejaron huella en la última jornada.</p>
+        <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-zinc-400" data-fav-estado hidden></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <article class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/5]" data-fav-tarjeta data-fav-contenedor>
+          <img src="imagenes/equipo-bayern.webp" alt="" width="700" height="900" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <div class="w-10 h-10 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-xs mb-3 corte-diagonal" aria-hidden="true">BAY</div>
+            <h2 class="font-display font-bold text-xl" data-team="bayern" data-nombre="Bayern Múnich">Bayern Múnich</h2>
+            <p class="mt-1 text-sm text-zinc-300">7 goles ante Union Berlín, la mayor goleada del fin de semana</p>
+          </div>
+        </article>
+
+        <article class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/5]" data-fav-tarjeta data-fav-contenedor>
+          <img src="imagenes/equipo-real-madrid.webp" alt="" width="700" height="900" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <div class="w-10 h-10 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-xs mb-3 corte-diagonal" aria-hidden="true">RMA</div>
+            <h2 class="font-display font-bold text-xl" data-team="real-madrid" data-nombre="Real Madrid">Real Madrid</h2>
+            <p class="mt-1 text-sm text-zinc-300">Mbappé llega como máximo goleador de LaLiga, con 7 goles</p>
+          </div>
+        </article>
+
+        <article class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/5]" data-fav-tarjeta data-fav-contenedor>
+          <img src="imagenes/equipo-barcelona.webp" alt="" width="700" height="900" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <div class="w-10 h-10 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-xs mb-3 corte-diagonal" aria-hidden="true">BAR</div>
+            <h2 class="font-display font-bold text-xl" data-team="barcelona" data-nombre="FC Barcelona">Barcelona</h2>
+            <p class="mt-1 text-sm text-zinc-300">Remontó un 0-1 en Sevilla para ganar 1-3</p>
+          </div>
+        </article>
+
+        <article class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/5]" data-fav-tarjeta data-fav-contenedor>
+          <img src="imagenes/equipo-brighton.webp" alt="" width="700" height="900" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <div class="w-10 h-10 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-xs mb-3 corte-diagonal" aria-hidden="true">BHA</div>
+            <h2 class="font-display font-bold text-xl" data-team="brighton" data-nombre="Brighton &amp; Hove Albion">Brighton</h2>
+            <p class="mt-1 text-sm text-zinc-300">Sorprendió 3-0 al Arsenal, que solo remató una vez al arco</p>
+          </div>
+        </article>
+
+        <article class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/5]" data-fav-tarjeta data-fav-contenedor>
+          <img src="imagenes/equipo-inter.webp" alt="" width="700" height="900" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <div class="w-10 h-10 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-xs mb-3 corte-diagonal" aria-hidden="true">INT</div>
+            <h2 class="font-display font-bold text-xl" data-team="inter" data-nombre="Inter de Milán">Inter</h2>
+            <p class="mt-1 text-sm text-zinc-300">Empató 2-2 en Roma tras ir perdiendo por dos goles</p>
+          </div>
+        </article>
+
+        <article class="group relative rounded-xl overflow-hidden border border-zinc-800 aspect-[4/5]" data-fav-tarjeta data-fav-contenedor>
+          <img src="imagenes/equipo-dortmund.webp" alt="" width="700" height="900" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent"></div>
+          <div class="relative h-full flex flex-col justify-end p-5">
+            <div class="w-10 h-10 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-xs mb-3 corte-diagonal" aria-hidden="true">BVB</div>
+            <h2 class="font-display font-bold text-xl" data-team="dortmund" data-nombre="Borussia Dortmund">Borussia Dortmund</h2>
+            <p class="mt-1 text-sm text-zinc-300">Ganó 0-1 en Stuttgart con gol sobre el final</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="border-t border-zinc-800 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+        <div>
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-sm corte-diagonal" aria-hidden="true">MP</div>
+            <span class="font-display font-bold text-xl tracking-tight">MATCHPOINT</span>
+          </a>
+          <p class="mt-4 text-sm text-zinc-450 max-w-xs">Resultados, calendario y posiciones de Premier League, LaLiga, Serie A y Bundesliga.</p>
+        </div>
+        <nav aria-labelledby="pie-navegacion">
+          <h3 id="pie-navegacion" class="font-display font-semibold text-sm uppercase tracking-wide text-zinc-400 mb-4">Navegación</h3>
+          <ul class="sm:space-y-2 text-sm">
+            <li><a href="index.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Inicio</a></li>
+            <li><a href="resultados.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Resultados</a></li>
+            <li><a href="calendario.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Calendario</a></li>
+            <li><a href="equipos.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Equipos</a></li>
+            <li><a href="posiciones.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Posiciones</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3 class="font-display font-semibold text-sm uppercase tracking-wide text-zinc-400 mb-4">Ligas</h3>
+          <ul class="sm:space-y-2 text-sm">
+            <li><a href="posiciones.html#premier-league" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Premier League</a></li>
+            <li><a href="posiciones.html#laliga" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">LaLiga</a></li>
+            <li><a href="posiciones.html#serie-a" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Serie A</a></li>
+            <li><a href="posiciones.html#bundesliga" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Bundesliga</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-450">
+        <span>Proyecto académico realizado con Tailwind CSS.</span>
+        <span>Datos de la jornada del 18 al 20 de septiembre.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

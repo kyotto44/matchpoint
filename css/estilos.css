@@ -1,0 +1,207 @@
+/* Textura sutil tipo scanline de transmisión, usada en el hero de index.html */
+.scanline-texture {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.025) 0px,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* Ticker de resultados en loop continuo, usado en el header de todas las páginas */
+.ticker-track {
+  width: max-content;
+  animation: ticker 28s linear infinite;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Brillo animado detrás del titular del hero */
+.pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+  .pulse-glow { animation: none; opacity: 0.7; }
+}
+
+/* Panel de vidrio esmerilado del hero: respeta si el sistema pide menos transparencia */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-panel {
+    background-color: rgb(24 24 27 / 0.95) !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* =====================================================================
+   Añadidos de la versión de portafolio
+   Colores usados: ámbar #fbbf24 (amber-400), zinc-950 #09090b, zinc-900 #18181b,
+   zinc-800 #27272a, zinc-500 #71717a. Curva de salida rápida para la interfaz.
+   ===================================================================== */
+
+/* ---------- Base ---------- */
+
+/* Tailwind pone display:flex/grid con la misma especificidad que [hidden];
+   esto asegura que el atributo hidden siempre oculte el elemento. */
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+::selection { background-color: #fbbf24; color: #09090b; }
+
+input { caret-color: #fbbf24; }
+
+/* Foco de teclado visible y del color de la marca en todo lo que no tenga uno propio */
+:focus-visible { outline: 2px solid #fbbf24; outline-offset: 2px; }
+#contenido:focus { outline: none; }
+
+/* Barra de desplazamiento discreta en las tablas que se desplazan en celular */
+.tabla-contenedor { scrollbar-width: thin; scrollbar-color: #3f3f46 transparent; }
+
+/* ---------- Menú móvil ---------- */
+
+.menu-panel {
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 150ms ease-out, transform 150ms ease-out;
+}
+.menu-panel.is-abierto {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms cubic-bezier(0.23, 1, 0.32, 1), transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu-fondo { opacity: 0; transition: opacity 150ms ease-out; }
+.menu-fondo.is-abierto { opacity: 1; transition-duration: 220ms; }
+
+/* Mientras el menú está abierto la página de atrás no se desplaza */
+html.menu-abierto { overflow: hidden; }
+
+/* Ícono hamburguesa que se convierte en X */
+.icono-menu path {
+  transform-box: view-box;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1), opacity 150ms ease-out;
+}
+.icono-menu .linea-1 { transform-origin: 12px 6px; }
+.icono-menu .linea-3 { transform-origin: 12px 18px; }
+[aria-expanded="true"] .icono-menu .linea-1 { transform: translateY(6px) rotate(45deg); }
+[aria-expanded="true"] .icono-menu .linea-2 { opacity: 0; }
+[aria-expanded="true"] .icono-menu .linea-3 { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---------- Ticker: pausa ---------- */
+
+.ticker.is-pausado .ticker-track { animation-play-state: paused; }
+@media (hover: hover) and (pointer: fine) {
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+}
+
+/* ---------- Equipo favorito ---------- */
+
+[data-team].is-fav { color: #fbbf24; }
+
+/* Estrella delante del nombre (forma además de color, para no depender solo del color) */
+[data-team].is-fav::before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.3em;
+  vertical-align: -0.05em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.75l2.83 5.73 6.32.92-4.57 4.46 1.08 6.29L12 17.18l-5.66 2.97 1.08-6.29L2.85 9.4l6.32-.92z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2.75l2.83 5.73 6.32.92-4.57 4.46 1.08 6.29L12 17.18l-5.66 2.97 1.08-6.29L2.85 9.4l6.32-.92z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+/* Donde ya hay un botón de estrella no se repite el ícono */
+[data-fav-celda].is-fav::before,
+[data-fav-tarjeta] [data-team].is-fav::before { content: none; }
+
+.partido.has-fav {
+  border-color: rgb(251 191 36 / 0.5);
+  background-image: linear-gradient(rgb(251 191 36 / 0.07), rgb(251 191 36 / 0.07));
+}
+a[data-partido].has-fav,
+[data-fav-tarjeta].has-fav { border-color: #fbbf24; }
+.tabla-pos tr.has-fav > td { background-color: rgb(251 191 36 / 0.08); }
+
+/* Botón de estrella */
+.boton-fav .estrella { fill: transparent; transition: fill 150ms ease-out; }
+.boton-fav[aria-pressed="true"] .estrella { fill: currentColor; }
+.boton-fav.is-pop .estrella {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: estrella-pop 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes estrella-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.28); }
+  100% { transform: scale(1); }
+}
+/* Área táctil de 44px para la estrella de la tabla sin agrandar la fila */
+.boton-fav-fila::before { content: ""; position: absolute; inset: -4px; }
+
+/* ---------- Resultados en celular: local arriba, visitante abajo ----------
+   En una sola línea los nombres largos quedaban cortados ("Nottingham ...", "Mönchengl..."). */
+@media (max-width: 639.98px) {
+  .partido {
+    display: grid;
+    grid-template-columns: 1.75rem minmax(0, 1fr) auto;
+    grid-template-areas:
+      "escudo-local equipo-local gol-local"
+      "escudo-visita equipo-visita gol-visita";
+    column-gap: 0.75rem;
+    row-gap: 0.5rem;
+  }
+  .partido .escudo-local { grid-area: escudo-local; }
+  .partido .equipo-local { grid-area: equipo-local; }
+  .partido .marcador { display: contents; }
+  .partido .gol-local { grid-area: gol-local; text-align: right; }
+  .partido .gol-visita { grid-area: gol-visita; text-align: right; }
+  .partido .equipo-visita { grid-area: equipo-visita; }
+  .partido .escudo-visita { grid-area: escudo-visita; }
+  /* El guion no se ve, pero los lectores de pantalla siguen leyendo "2 - 1" */
+  .partido .gol-sep {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Tabla de posiciones: orden por columna ---------- */
+
+.orden-icono { flex-shrink: 0; opacity: 0.45; transition: opacity 150ms ease-out, color 150ms ease-out; }
+.orden-boton:hover .orden-icono { opacity: 0.8; }
+th[aria-sort] .orden-boton { color: #fafafa; }
+th[aria-sort] .orden-icono { opacity: 1; color: #fbbf24; }
+th[aria-sort="ascending"] .orden-icono .flecha-abajo,
+th[aria-sort="descending"] .orden-icono .flecha-arriba { opacity: 0.25; }
+
+/* ---------- Movimiento reducido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker-boton { display: none !important; }
+  .menu-panel,
+  .menu-panel.is-abierto { transform: none; }
+  .icono-menu path { transition: opacity 150ms ease-out; }
+  .boton-fav.is-pop .estrella { animation: none; }
+}
+
+/* Recortes diagonales de la marca. Antes estaban escritos como style="" en cada etiqueta del HTML;
+   se movieron aquí para que la política de seguridad (Content-Security-Policy) no tenga que permitir estilos en línea. */
+.corte-diagonal {
+  clip-path: polygon(18% 0, 100% 0, 82% 100%, 0 100%);
+}
+
+.corte-esquina {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 91% 100%, 0 100%);
+}

@@ -1,0 +1,51 @@
+# Configuración de Netlify para MatchPoint.
+# Es un sitio estático: no hay build, ni funciones, ni formularios de Netlify, ni claves de API.
+# Por eso no hay nada que un bot pueda usar para gastar cómputo o tokens; lo único que consume es
+# ancho de banda, y en el plan gratis Netlify pausa el sitio (no cobra) si se acaba el cupo del mes.
+
+[build]
+  publish = "."
+
+# Cabeceras de seguridad para todas las páginas.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Solo se cargan recursos de este sitio y de los servicios que se usan a propósito.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    # No dejar que otras páginas metan este sitio en un iframe (clickjacking y robo de ancho de banda).
+    X-Frame-Options = "DENY"
+    # El navegador no adivina tipos de archivo.
+    X-Content-Type-Options = "nosniff"
+    # Al salir a otro sitio solo se envía el dominio, no la ruta completa.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # El sitio no usa cámara, micrófono, ubicación ni pagos.
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    # Siempre por HTTPS.
+    Strict-Transport-Security = "max-age=31536000"
+
+# Caché del navegador: quien vuelve no descarga otra vez lo mismo (menos peticiones y menos ancho de banda).
+# Las imágenes casi nunca cambian; CSS y JS se guardan menos tiempo para que los cambios se vean pronto.
+[[headers]]
+  for = "/imagenes/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/docs/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/favicon.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

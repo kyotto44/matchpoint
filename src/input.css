@@ -1,0 +1,8 @@
+/*
+ * Entrada de Tailwind CSS. No se edita css/tailwind.css a mano: se genera desde aquí con
+ *   npm run build:css
+ * Los estilos propios del sitio (ticker, menú móvil, favorito, etc.) viven en css/estilos.css.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MatchPoint | Posiciones</title>
+  <meta name="description" content="Tabla de posiciones de Premier League, LaLiga, Serie A y Bundesliga después de la última jornada, con zonas de Champions League y descenso. Ordena por cualquier columna." />
+  <meta name="theme-color" content="#09090b" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MatchPoint" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:title" content="MatchPoint | Posiciones" />
+  <meta property="og:description" content="Tabla de posiciones de Premier League, LaLiga, Serie A y Bundesliga después de la última jornada, con zonas de Champions League y descenso. Ordena por cualquier columna." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tailwind.css" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script defer src="js/main.js"></script>
+  <script defer src="js/posiciones.js"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans">
+
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-amber-400 focus:px-4 focus:py-3 focus:font-display focus:font-bold focus:text-zinc-950">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-50">
+    <div class="h-[3px] bg-amber-400"></div>
+    <nav class="relative z-20 bg-zinc-950/95 backdrop-blur-sm border-b border-zinc-800" aria-label="Principal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-sm corte-diagonal" aria-hidden="true">MP</div>
+            <span class="font-display font-bold text-xl tracking-tight">MATCHPOINT</span>
+          </a>
+          <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+            <a href="index.html" class="text-zinc-400 hover:text-white transition">Inicio</a>
+            <a href="resultados.html" class="text-zinc-400 hover:text-white transition">Resultados</a>
+            <a href="calendario.html" class="text-zinc-400 hover:text-white transition">Calendario</a>
+            <a href="equipos.html" class="text-zinc-400 hover:text-white transition">Equipos</a>
+            <a href="posiciones.html" class="text-white font-semibold" aria-current="page">Posiciones</a>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="hidden sm:flex items-center font-mono text-xs text-zinc-400 border border-zinc-800 rounded-md px-3 py-1.5">18-20 SEP</div>
+            <button type="button" class="md:hidden -mr-0.5 p-2.5 rounded-md text-zinc-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil" data-menu-boton>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icono-menu h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path class="linea-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+                <path class="linea-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+                <path class="linea-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="menu-movil" class="menu-panel md:hidden absolute inset-x-0 top-full z-10 border-b border-zinc-800 bg-zinc-950 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.6)]" hidden>
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-5" aria-label="Menú móvil">
+        <ul class="divide-y divide-zinc-800/80">
+            <li><a href="index.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Inicio</a></li>
+            <li><a href="resultados.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Resultados</a></li>
+            <li><a href="calendario.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Calendario</a></li>
+            <li><a href="equipos.html" class="flex min-h-[52px] items-center font-display text-lg font-medium text-zinc-400 transition-colors hover:text-white">Equipos</a></li>
+            <li><a href="posiciones.html" aria-current="page" class="flex min-h-[52px] items-center justify-between font-display text-lg font-semibold text-white">Posiciones<span class="h-3.5 w-2.5 bg-amber-400 corte-diagonal" aria-hidden="true"></span></a></li>
+        </ul>
+        <p class="mt-4 inline-flex items-center font-mono text-xs text-zinc-400 border border-zinc-800 rounded-md px-3 py-1.5">Jornada 18-20 SEP</p>
+      </nav>
+    </div>
+    <div class="menu-fondo md:hidden fixed inset-0 z-0 bg-zinc-950/70" hidden data-menu-fondo></div>
+    <div class="ticker relative z-20 bg-zinc-900 border-b border-zinc-800" role="region" aria-label="Últimos resultados" data-ticker>
+      <div class="overflow-hidden">
+      <div class="ticker-track flex items-center gap-10 py-2 font-mono text-xs whitespace-nowrap">
+        <span class="flex items-center gap-10">
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="bayern">Bayern</span> <span class="text-white font-semibold">7-0</span> <span data-team="union-berlin">Union Berlín</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="sevilla">Sevilla</span> <span class="text-white font-semibold">1-3</span> <span data-team="barcelona">Barcelona</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="gladbach">Gladbach</span> <span class="text-white font-semibold">3-4</span> <span data-team="mainz">Mainz</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="roma">Roma</span> <span class="text-white font-semibold">2-2</span> <span data-team="inter">Inter</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="brighton">Brighton</span> <span class="text-white font-semibold">3-0</span> <span data-team="arsenal">Arsenal</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="celta">Celta</span> <span class="text-white font-semibold">5-0</span> <span data-team="racing">Racing</span></span>
+        </span>
+        <span class="flex items-center gap-10" aria-hidden="true">
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="bayern">Bayern</span> <span class="text-white font-semibold">7-0</span> <span data-team="union-berlin">Union Berlín</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="sevilla">Sevilla</span> <span class="text-white font-semibold">1-3</span> <span data-team="barcelona">Barcelona</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="gladbach">Gladbach</span> <span class="text-white font-semibold">3-4</span> <span data-team="mainz">Mainz</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="roma">Roma</span> <span class="text-white font-semibold">2-2</span> <span data-team="inter">Inter</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="brighton">Brighton</span> <span class="text-white font-semibold">3-0</span> <span data-team="arsenal">Arsenal</span></span>
+          <span class="text-zinc-400" data-fav-contenedor><span data-team="celta">Celta</span> <span class="text-white font-semibold">5-0</span> <span data-team="racing">Racing</span></span>
+        </span>
+      </div>
+      </div>
+      <button type="button" class="ticker-boton absolute inset-y-0 right-0 flex w-14 items-center justify-end pr-3 bg-gradient-to-l from-zinc-900 from-40% to-transparent text-zinc-400 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-amber-400 before:absolute before:inset-x-0 before:-inset-y-1.5 before:content-['']" aria-pressed="false" data-ticker-boton hidden>
+        <span class="sr-only">Pausar el carrusel de resultados</span>
+        <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-icono-pausa><rect x="3" y="2.5" width="3.5" height="11" rx="0.75" /><rect x="9.5" y="2.5" width="3.5" height="11" rx="0.75" /></svg>
+        <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-icono-play hidden><path d="M4.5 2.75v10.5a.75.75 0 0 0 1.14.64l8.4-5.25a.75.75 0 0 0 0-1.28l-8.4-5.25a.75.75 0 0 0-1.14.64z" /></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+  <section class="py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-6">
+        <h1 class="font-display font-bold text-3xl md:text-4xl tracking-tight">Tabla de posiciones</h1>
+        <p class="mt-2 text-zinc-400">Después de la última jornada disputada en cada liga.</p>
+      </div>
+
+      <div class="mb-8 space-y-4">
+      <div class="flex flex-wrap items-center gap-5 text-xs text-zinc-450">
+        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-amber-400"></span> Zona de Champions League</span>
+        <span class="flex items-center gap-2"><span class="w-2.5 h-2.5 bg-red-500/60"></span> Zona de descenso</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-zinc-400" data-fav-estado hidden></div>
+      </div>
+
+      <div class="mb-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap" role="tablist" aria-label="Elige una liga" data-tabs hidden>
+        <button type="button" role="tab" id="tab-premier-league" aria-controls="premier-league" aria-selected="true" tabindex="0" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-selected:border-amber-400 aria-selected:bg-amber-400 aria-selected:text-zinc-950 aria-selected:hover:border-amber-300 aria-selected:hover:bg-amber-300 aria-selected:hover:text-zinc-950" data-tab="premier-league">Premier League</button>
+        <button type="button" role="tab" id="tab-laliga" aria-controls="laliga" aria-selected="false" tabindex="-1" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-selected:border-amber-400 aria-selected:bg-amber-400 aria-selected:text-zinc-950 aria-selected:hover:border-amber-300 aria-selected:hover:bg-amber-300 aria-selected:hover:text-zinc-950" data-tab="laliga">LaLiga</button>
+        <button type="button" role="tab" id="tab-serie-a" aria-controls="serie-a" aria-selected="false" tabindex="-1" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-selected:border-amber-400 aria-selected:bg-amber-400 aria-selected:text-zinc-950 aria-selected:hover:border-amber-300 aria-selected:hover:bg-amber-300 aria-selected:hover:text-zinc-950" data-tab="serie-a">Serie A</button>
+        <button type="button" role="tab" id="tab-bundesliga" aria-controls="bundesliga" aria-selected="false" tabindex="-1" class="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border border-zinc-800 px-4 text-sm font-medium text-zinc-400 transition hover:border-zinc-600 hover:text-white active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 aria-selected:border-amber-400 aria-selected:bg-amber-400 aria-selected:text-zinc-950 aria-selected:hover:border-amber-300 aria-selected:hover:bg-amber-300 aria-selected:hover:text-zinc-950" data-tab="bundesliga">Bundesliga</button>
+      </div>
+
+      <div class="space-y-16">
+
+        <!-- PREMIER LEAGUE -->
+        <section id="premier-league" class="scroll-mt-40" aria-labelledby="titulo-premier-league" data-panel>
+          <h2 id="titulo-premier-league" class="font-display font-semibold text-lg mb-4">Premier League</h2>
+          <div class="tabla-contenedor overflow-x-auto rounded-md border border-zinc-800">
+            <table class="tabla-pos w-full text-sm min-w-[560px]" data-liga-nombre="Premier League">
+              <caption class="sr-only">Tabla de posiciones de la Premier League. Los encabezados de columna permiten ordenar la tabla.</caption>
+              <thead>
+                <tr class="bg-zinc-900 text-zinc-450 text-xs uppercase tracking-wider">
+                  <th scope="col" class="text-left font-medium px-4 py-3 w-10" data-orden="pos">#</th>
+                  <th scope="col" class="text-left font-medium px-4 py-3" data-orden="equipo">Equipo</th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="pj"><abbr title="Partidos jugados" class="no-underline">PJ</abbr><span class="sr-only">, partidos jugados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="g"><abbr title="Ganados" class="no-underline">G</abbr><span class="sr-only">, ganados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="e"><abbr title="Empatados" class="no-underline">E</abbr><span class="sr-only">, empatados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="p"><abbr title="Perdidos" class="no-underline">P</abbr><span class="sr-only">, perdidos</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="dg"><abbr title="Diferencia de gol" class="no-underline">DG</abbr><span class="sr-only">, diferencia de gol</span></th>
+                  <th scope="col" class="text-center font-medium px-4 py-3" data-orden="pts"><abbr title="Puntos" class="no-underline">Pts</abbr><span class="sr-only">, puntos</span></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800">
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">1<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="manchester-city" data-fav-celda>Manchester City</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">12</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">2<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="arsenal" data-fav-celda>Arsenal</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+4</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">12</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">3<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="brighton" data-fav-celda>Brighton &amp; Hove Albion</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+11</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">10</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">4<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="brentford" data-fav-celda>Brentford</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">9</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">5</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="everton" data-fav-celda>Everton</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">9</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">6</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="leeds" data-fav-celda>Leeds United</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+4</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">8</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">7</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="hull" data-fav-celda>Hull City</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">8</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">8</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="newcastle" data-fav-celda>Newcastle United</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">8</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">9</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="chelsea" data-fav-celda>Chelsea</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">10</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="liverpool" data-fav-celda>Liverpool</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">6</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">11</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="ipswich" data-fav-celda>Ipswich Town</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-4</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">6</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">12</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="nottingham-forest" data-fav-celda>Nottingham Forest</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">5</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">13</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="manchester-united" data-fav-celda>Manchester United</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">14</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="sunderland" data-fav-celda>Sunderland</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">15</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="aston-villa" data-fav-celda>Aston Villa</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-5</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">16</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="bournemouth" data-fav-celda>Bournemouth</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">3</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">17</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="crystal-palace" data-fav-celda>Crystal Palace</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-5</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">3</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">18<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="coventry" data-fav-celda>Coventry City</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-9</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">3</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">19<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="tottenham" data-fav-celda>Tottenham Hotspur</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">2</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">20<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="fulham" data-fav-celda>Fulham</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- LALIGA -->
+        <section id="laliga" class="scroll-mt-40" aria-labelledby="titulo-laliga" data-panel>
+          <h2 id="titulo-laliga" class="font-display font-semibold text-lg mb-4">LaLiga</h2>
+          <div class="tabla-contenedor overflow-x-auto rounded-md border border-zinc-800">
+            <table class="tabla-pos w-full text-sm min-w-[560px]" data-liga-nombre="LaLiga">
+              <caption class="sr-only">Tabla de posiciones de LaLiga. Los encabezados de columna permiten ordenar la tabla.</caption>
+              <thead>
+                <tr class="bg-zinc-900 text-zinc-450 text-xs uppercase tracking-wider">
+                  <th scope="col" class="text-left font-medium px-4 py-3 w-10" data-orden="pos">#</th>
+                  <th scope="col" class="text-left font-medium px-4 py-3" data-orden="equipo">Equipo</th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="pj"><abbr title="Partidos jugados" class="no-underline">PJ</abbr><span class="sr-only">, partidos jugados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="g"><abbr title="Ganados" class="no-underline">G</abbr><span class="sr-only">, ganados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="e"><abbr title="Empatados" class="no-underline">E</abbr><span class="sr-only">, empatados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="p"><abbr title="Perdidos" class="no-underline">P</abbr><span class="sr-only">, perdidos</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="dg"><abbr title="Diferencia de gol" class="no-underline">DG</abbr><span class="sr-only">, diferencia de gol</span></th>
+                  <th scope="col" class="text-center font-medium px-4 py-3" data-orden="pts"><abbr title="Puntos" class="no-underline">Pts</abbr><span class="sr-only">, puntos</span></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800">
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">1<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="barcelona" data-fav-celda>FC Barcelona</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+22</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">18</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">2<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="real-madrid" data-fav-celda>Real Madrid</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+11</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">15</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">3<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="betis" data-fav-celda>Real Betis</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">15</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">4<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="atletico-madrid" data-fav-celda>Atlético de Madrid</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+8</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">13</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">5</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="sevilla" data-fav-celda>Sevilla</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">13</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">6</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="alaves" data-fav-celda>Deportivo Alavés</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+5</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">10</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">7</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="osasuna" data-fav-celda>Osasuna</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">7</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">10</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">8</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="deportivo" data-fav-celda>Deportivo La Coruña</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">9</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">9</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="athletic" data-fav-celda>Athletic Club</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">10</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="espanyol" data-fav-celda>RCD Espanyol</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">7</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">11</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="racing" data-fav-celda>Racing de Santander</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-5</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">12</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="real-sociedad" data-fav-celda>Real Sociedad</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-5</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">13</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="rayo" data-fav-celda>Rayo Vallecano</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">7</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">14</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="villarreal" data-fav-celda>Villarreal</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">5</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">15</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="levante" data-fav-celda>Levante</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">5</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">16</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="getafe" data-fav-celda>Getafe</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-4</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">5</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">17</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="elche" data-fav-celda>Elche CF</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">7</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">5</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">18<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="celta" data-fav-celda>Celta de Vigo</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">19<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="valencia" data-fav-celda>Valencia CF</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-8</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">20<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="malaga" data-fav-celda>Málaga</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">6</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-8</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SERIE A -->
+        <section id="serie-a" class="scroll-mt-40" aria-labelledby="titulo-serie-a" data-panel>
+          <h2 id="titulo-serie-a" class="font-display font-semibold text-lg mb-4">Serie A</h2>
+          <div class="tabla-contenedor overflow-x-auto rounded-md border border-zinc-800">
+            <table class="tabla-pos w-full text-sm min-w-[560px]" data-liga-nombre="Serie A">
+              <caption class="sr-only">Tabla de posiciones de la Serie A. Los encabezados de columna permiten ordenar la tabla.</caption>
+              <thead>
+                <tr class="bg-zinc-900 text-zinc-450 text-xs uppercase tracking-wider">
+                  <th scope="col" class="text-left font-medium px-4 py-3 w-10" data-orden="pos">#</th>
+                  <th scope="col" class="text-left font-medium px-4 py-3" data-orden="equipo">Equipo</th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="pj"><abbr title="Partidos jugados" class="no-underline">PJ</abbr><span class="sr-only">, partidos jugados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="g"><abbr title="Ganados" class="no-underline">G</abbr><span class="sr-only">, ganados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="e"><abbr title="Empatados" class="no-underline">E</abbr><span class="sr-only">, empatados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="p"><abbr title="Perdidos" class="no-underline">P</abbr><span class="sr-only">, perdidos</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="dg"><abbr title="Diferencia de gol" class="no-underline">DG</abbr><span class="sr-only">, diferencia de gol</span></th>
+                  <th scope="col" class="text-center font-medium px-4 py-3" data-orden="pts"><abbr title="Puntos" class="no-underline">Pts</abbr><span class="sr-only">, puntos</span></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800">
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">1<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="roma" data-fav-celda>AS Roma</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+11</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">12</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">2<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="inter" data-fav-celda>Inter de Milán</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+7</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">12</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">3<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="como" data-fav-celda>Como 1907</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+5</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">10</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">4<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="lazio" data-fav-celda>Lazio</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">10</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">5</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="cagliari" data-fav-celda>Cagliari</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">9</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">6</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="milan" data-fav-celda>AC Milan</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">8</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">7</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="frosinone" data-fav-celda>Frosinone</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">8</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="juventus" data-fav-celda>Juventus</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">9</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="sassuolo" data-fav-celda>Sassuolo</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">10</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="napoli" data-fav-celda>Napoli</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">6</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">11</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="atalanta" data-fav-celda>Atalanta</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">6</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">12</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="lecce" data-fav-celda>Lecce</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">6</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">13</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="udinese" data-fav-celda>Udinese</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">14</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="monza" data-fav-celda>Monza</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">5</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-4</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">15</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="torino" data-fav-celda>Torino</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">3</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">16</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="fiorentina" data-fav-celda>Fiorentina</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">3</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">17</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="bologna" data-fav-celda>Bologna</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">1</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">18<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="parma" data-fav-celda>Parma</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-4</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">1</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">19<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="genoa" data-fav-celda>Genoa</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">1</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">20<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="venezia" data-fav-celda>Venezia</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-7</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- BUNDESLIGA -->
+        <section id="bundesliga" class="scroll-mt-40" aria-labelledby="titulo-bundesliga" data-panel>
+          <h2 id="titulo-bundesliga" class="font-display font-semibold text-lg mb-4">Bundesliga</h2>
+          <div class="tabla-contenedor overflow-x-auto rounded-md border border-zinc-800">
+            <table class="tabla-pos w-full text-sm min-w-[560px]" data-liga-nombre="Bundesliga">
+              <caption class="sr-only">Tabla de posiciones de la Bundesliga. Los encabezados de columna permiten ordenar la tabla.</caption>
+              <thead>
+                <tr class="bg-zinc-900 text-zinc-450 text-xs uppercase tracking-wider">
+                  <th scope="col" class="text-left font-medium px-4 py-3 w-10" data-orden="pos">#</th>
+                  <th scope="col" class="text-left font-medium px-4 py-3" data-orden="equipo">Equipo</th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="pj"><abbr title="Partidos jugados" class="no-underline">PJ</abbr><span class="sr-only">, partidos jugados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="g"><abbr title="Ganados" class="no-underline">G</abbr><span class="sr-only">, ganados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="e"><abbr title="Empatados" class="no-underline">E</abbr><span class="sr-only">, empatados</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="p"><abbr title="Perdidos" class="no-underline">P</abbr><span class="sr-only">, perdidos</span></th>
+                  <th scope="col" class="text-center font-medium px-3 py-3" data-orden="dg"><abbr title="Diferencia de gol" class="no-underline">DG</abbr><span class="sr-only">, diferencia de gol</span></th>
+                  <th scope="col" class="text-center font-medium px-4 py-3" data-orden="pts"><abbr title="Puntos" class="no-underline">Pts</abbr><span class="sr-only">, puntos</span></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-zinc-800">
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">1<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="bayern" data-fav-celda>Bayern Múnich</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+12</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">10</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">2<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="friburgo" data-fav-celda>SC Friburgo</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+9</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">10</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">3<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="dortmund" data-fav-celda>Borussia Dortmund</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">10</td>
+                </tr>
+                <tr class="border-l-2 border-amber-400 bg-amber-400/5" data-zona="champions" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">4<span class="sr-only">, zona de Champions League</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="augsburgo" data-fav-celda>FC Augsburg</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+5</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">5</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="mainz" data-fav-celda>Mainz 05</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+4</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">6</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="werder" data-fav-celda>Werder Bremen</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">7</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">7</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="leipzig" data-fav-celda>RB Leipzig</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+6</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">6</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">8</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="elversberg" data-fav-celda>SV Elversberg</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">6</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">9</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="frankfurt" data-fav-celda>Eintracht Frankfurt</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">5</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">10</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="leverkusen" data-fav-celda>Bayer Leverkusen</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">+3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">11</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="schalke" data-fav-celda>FC Schalke 04</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">12</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="stuttgart" data-fav-celda>VfB Stuttgart</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-2</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">13</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="colonia" data-fav-celda>FC Colonia</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-3</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">4</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">14</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="hoffenheim" data-fav-celda>TSG Hoffenheim</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-1</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">3</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">15</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="hamburgo" data-fav-celda>Hamburgo S.V.</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-11</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">3</td>
+                </tr>
+                <tr data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">16</td>
+                  <td class="px-4 py-2.5 font-medium" data-team="paderborn" data-fav-celda>SC Paderborn 07</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">2</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-4</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">1</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">17<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="union-berlin" data-fav-celda>Union Berlin</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">1</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">3</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-13</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">1</td>
+                </tr>
+                <tr class="border-l-2 border-red-500/60 bg-red-500/5" data-zona="descenso" data-fav-contenedor>
+                  <td class="px-4 py-2.5 font-mono text-zinc-400">18<span class="sr-only">, zona de descenso</span></td>
+                  <td class="px-4 py-2.5 font-medium" data-team="gladbach" data-fav-celda>Borussia Mönchengladbach</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">0</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">4</td>
+                  <td class="px-3 py-2.5 text-center font-mono text-zinc-400">-10</td>
+                  <td class="px-4 py-2.5 text-center font-mono font-bold">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="border-t border-zinc-800 bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+        <div>
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-9 h-9 bg-amber-400 flex items-center justify-center font-mono font-bold text-zinc-950 text-sm corte-diagonal" aria-hidden="true">MP</div>
+            <span class="font-display font-bold text-xl tracking-tight">MATCHPOINT</span>
+          </a>
+          <p class="mt-4 text-sm text-zinc-450 max-w-xs">Resultados, calendario y posiciones de Premier League, LaLiga, Serie A y Bundesliga.</p>
+        </div>
+        <nav aria-labelledby="pie-navegacion">
+          <h3 id="pie-navegacion" class="font-display font-semibold text-sm uppercase tracking-wide text-zinc-400 mb-4">Navegación</h3>
+          <ul class="sm:space-y-2 text-sm">
+            <li><a href="index.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Inicio</a></li>
+            <li><a href="resultados.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Resultados</a></li>
+            <li><a href="calendario.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Calendario</a></li>
+            <li><a href="equipos.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Equipos</a></li>
+            <li><a href="posiciones.html" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Posiciones</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3 class="font-display font-semibold text-sm uppercase tracking-wide text-zinc-400 mb-4">Ligas</h3>
+          <ul class="sm:space-y-2 text-sm">
+            <li><a href="posiciones.html#premier-league" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Premier League</a></li>
+            <li><a href="posiciones.html#laliga" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">LaLiga</a></li>
+            <li><a href="posiciones.html#serie-a" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Serie A</a></li>
+            <li><a href="posiciones.html#bundesliga" class="inline-flex min-h-[44px] items-center sm:min-h-0 text-zinc-450 hover:text-white transition">Bundesliga</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-450">
+        <span>Proyecto académico realizado con Tailwind CSS.</span>
+        <span>Datos de la jornada del 18 al 20 de septiembre.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
