@@ -2,6 +2,8 @@
 
 Portal de fútbol europeo con los resultados, el calendario, los equipos y la tabla de posiciones de la Premier League, LaLiga, la Serie A y la Bundesliga. Empezó como laboratorio de Tailwind CSS en la materia Construcción de Software (Ingeniería de Sistemas, Universidad Santo Tomás, Tunja) y se terminó como proyecto de portafolio.
 
+**Sitio publicado:** https://matchpoint-kyotto44.netlify.app
+
 <p>
   <img src="docs/captura-escritorio.webp" alt="Portada de MatchPoint en escritorio: titular 'Cada gol, en el momento exacto' sobre la foto de un estadio, con el partido destacado a la derecha" width="600">
   <img src="docs/captura-movil.webp" alt="Portada de MatchPoint en un celular" width="180">
